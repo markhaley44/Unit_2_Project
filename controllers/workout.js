@@ -7,3 +7,7 @@ const WorkoutController = {
         })
     }
 }
+
+
+
+module.exports = WorkoutController;
