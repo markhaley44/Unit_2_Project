@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
-const fitTrackController = require('../controllers/fittrack');
+const userController = require('../controller/user');
+const workoutController = require('../controllers/workout');
 
 
 
