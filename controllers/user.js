@@ -11,6 +11,11 @@ const userController = {
         }).then(newUser => {
             res.render('user/create', newUser);
         });
+    },
+    index: (req, res) => {
+        User.find({}).then(user => {
+            res.render('user/index', { user });
+        });
     }
 }
 
