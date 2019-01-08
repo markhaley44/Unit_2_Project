@@ -1,0 +1,1 @@
+FitTrack = require('..models/FitTrack')
