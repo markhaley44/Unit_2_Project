@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
     name: String,
     age: Number,
-    weight: Number,
+    weight: String,
     sex: String
 
 });
