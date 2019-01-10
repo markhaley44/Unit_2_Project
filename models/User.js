@@ -5,7 +5,11 @@ const UserSchema = new Schema({
     name: String,
     age: Number,
     weight: String,
-    sex: String
+    sex: String,
+    meal: String,
+    workout: []
+
+
 
 });
 
