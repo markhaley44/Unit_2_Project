@@ -7,7 +7,7 @@ User.deleteMany({})
             name: "Kevin Hart",
             age: 34,
             weight: "185lbs",
-            sex: male
+            sex: "male"
         })
             .then((user) => {
                 Promise.all([user]).then(() => {
