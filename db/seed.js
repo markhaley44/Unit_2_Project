@@ -8,35 +8,36 @@ User.deleteMany({})
             age: 34,
             weight: "185lbs",
             sex: "male",
-            workout: "calisthenics",
+            workout: [],
             meal: []
         })
-            .then((user) => {
-                Promise.all([user]).then(() => {
-                    user.save()
+            .then((getFit) => {
+                const workoutA = Workout.create({
+                    dips: "10reps",
+                    pullups: "10reps",
+                    pushups: "10reps"
+                }).then((newWorkout) => {
+                    getFit.workout.push(newWorkout)
                 })
+                Promise.all([workoutA])
+                    .then(() => {
+                        getFit.save()
+                    })
             })
     })
-const WorkoutA = new Workout({
-    dips: "10reps",
-    pullups: "10reps",
-    pushups: "10reps"
-})
 
-const WorkoutB = new Workout({
-    benchpress: "135lbs",
-    legpress: "225lbs",
-    powerclings: "95lbs"
-})
 
-const Kevin = new User({
-    name: "Kevin Hart",
-    age: 34,
-    weight: "185lbs",
-    sex: "male"
-})
 
-User.remove({})
-    .then(() => Workout.remove({}))
-    .then(() => Workout.insertMany([WorkoutA, WorkoutB]))
-    .then(() => User.insertMany([Kevin]))
+
+
+// const WorkoutB = new Workout({
+//     benchpress: "135lbs",
+//     legpress: "225lbs",
+//     powerclings: "95lbs"
+// })
+
+
+// User.remove({})
+//     .then(() => Workout.remove({}))
+//     .then(() => Workout.insertMany([WorkoutA, WorkoutB]))
+//     .then(() => User.insertMany([Kevin]))

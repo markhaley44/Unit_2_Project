@@ -6,8 +6,14 @@ const UserSchema = new Schema({
     age: Number,
     weight: String,
     sex: String,
-    meal: String,
-    workout: []
+    meal: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Meal'
+    }],
+    workout: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Workout'
+    }]
 
 
 

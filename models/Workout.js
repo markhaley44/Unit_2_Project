@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const WorkoutSchema = new Schema({
     workoutType: String,
-    completed: Boolean,
-    
+    completed: Boolean
+
 
 });
 

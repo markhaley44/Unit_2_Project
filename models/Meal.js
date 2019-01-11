@@ -1,10 +1,10 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
-const MealSchema = new Schema({
-    breakfast: String,
-    lunch: String,
-    dinner: String
+const Meal = new Schema({
+    mealtime: String,
+    calories: Number,
+    proteinGrams: Number
 });
 
-module.exports = mongoose.model("MealSchema", Meal)
+module.exports = mongoose.model("Meal", Meal)
