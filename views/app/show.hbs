@@ -1,15 +1,16 @@
 <div style="text-align: center;">
-    <h1> Fit Track </h1>
+    <h1 style="color:crimson;"> Current User Profile </h1>
 
 
 
-    <p>
+    <h3 style="color:teal;">
         {{ user.name }}
+        <br>
         {{ user.weight }}
 
+    </h3>
 
 
-    </p>
 
     <a href="{{user.id}}/edit"> <button class="btn">Edit Weight</button></a>
     <form action="/{{user.id}}?_method=DELETE" method="POST">

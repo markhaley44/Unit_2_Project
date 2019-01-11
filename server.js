@@ -7,6 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'))
 app.use('/', router)
+
+app.use(express.static('Public'))
 app.set('view engine', 'hbs')
 
 
