@@ -33,11 +33,21 @@ const userController = {
     },
     edit: (req, res) => {
         const userId = req.params.id
-        res.render('app/edit')
+        User.findById(userId).then((user) => {
+            res.render('app/edit', { userId })
+
+        })
     },
     update: (req, res) => {
+        //     const userId = req.params.id
+        //     const newWeight = req.body.newWeight
+        //     User.findByIdAndUpdate(userId, req.body, { new: true }).then((user) => {
+        //         res.redirect(`/${userID}`)
+        //     })
+        // },
         const userId = req.params.id
-        User.findByIdAndUpdate(userId, req.body, { new: true }).then((user) => {
+        // const newWeight = req.body.newWeight
+        User.findByIdAndUpdate(userId, req.body, { new: true }).then(() => {
             res.redirect('/')
         })
     },

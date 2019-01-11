@@ -1,12 +1,19 @@
-<h1> Fit Track </h1>
+<div style="text-align: center;">
+    <h1> Fit Track </h1>
 
 
 
-<p>
-    {{ user.weight }}
+    <p>
+        {{ user.name }}
+        {{ user.weight }}
 
 
 
-</p>
+    </p>
 
-<a href="{{user._id }}/edit"> <button>Edit Weight</button></a>
+    <a href="{{user.id}}/edit"> <button class="btn">Edit Weight</button></a>
+    <form action="/{{user.id}}?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete</button>
+    </form>
+
+</div>
