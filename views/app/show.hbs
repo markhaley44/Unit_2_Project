@@ -1,18 +1,14 @@
 <div style="text-align: center;">
-    <h1 style="color:crimson;"> Current User Profile </h1>
-
-
+    <h2 style="color:rgb(216, 228, 238);"> Current User Profile </h2>
 
     <h3 style="color:teal;">
         {{ user.name }}
         <br>
         {{ user.weight }}
-
     </h3>
 
-
-
     <a href="{{user.id}}/edit"> <button class="btn">Edit Weight</button></a>
+
     <form action="/{{user.id}}?_method=DELETE" method="POST">
         <button class="btn" type="submit">Delete</button>
     </form>
